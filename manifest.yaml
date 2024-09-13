@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: summer2024-python-app
+  labels:
+    app: quotes
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: quotes
+  template:
+    metadata:
+      labels:
+        app: quotes
+    spec:
+      containers:
+      - name: quotes
+        image: awwjessica/python-quotes:v0.0.1
+
